@@ -18,6 +18,7 @@ frontend/.env
 # Build output
 dist/
 build/
+backend/dist/
 
 # Editor/OS junk
 .DS_Store
