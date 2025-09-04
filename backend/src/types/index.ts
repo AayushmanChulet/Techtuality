@@ -12,3 +12,8 @@ export const SigninSchema = zod.object({
     identifier: zod.string().min(3).max(50),
     password: zod.string().min(8).max(50),
 });
+
+export const TaskSchema = zod.object({
+    title: zod.string().min(3).max(100),
+    description: zod.string().min(3).max(500),
+});
