@@ -1,4 +1,4 @@
-# Techtuality
+# Techtuality Assignment
 
 A simple full-stack application with authentication and a todo dashboard.
 
