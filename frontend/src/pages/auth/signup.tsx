@@ -91,7 +91,7 @@ export default function SignupPage() {
       console.log(req.data.token);
       console.log(req.data);
       localStorage.setItem("authorization", `Bearer ${req.data.token}`);
-      navigate("/dashboard");
+      navigate("/");
     } catch (err) {
       console.error(err);
     }

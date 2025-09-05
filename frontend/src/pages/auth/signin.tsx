@@ -66,7 +66,7 @@ export default function SigninPage() {
       }
 
       localStorage.setItem("authorization", `Bearer ${req.data.token}`);
-      navigate("/dashboard");
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
