@@ -33,7 +33,7 @@ export const signup = async (req: Request, res: Response) => {
       throw new Error("User creation failed");
     }
 
-    const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: "24h" });
 
     return res
       .status(201)
@@ -68,7 +68,7 @@ export const signin = async (req: Request, res: Response) => {
       return res.status(400).json({ error: "Invalid credentials" });
     }
 
-    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "24h" });
 
     return res.status(200).json({ message: "Signin successful", token });
   } catch (err) {
