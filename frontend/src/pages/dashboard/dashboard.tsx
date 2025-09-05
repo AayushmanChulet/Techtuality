@@ -54,7 +54,7 @@ export default function DashboardPage() {
     const fetchTodos = async () => {
 
     const token = localStorage.getItem("authorization");
-    
+
     if (!token) {
       navigate("/signin");
     }
@@ -183,8 +183,15 @@ export default function DashboardPage() {
           value={searchField}
           onChange={(e) => setSearchField(e.target.value)}
         />
-        <Button className="ml-2 bg-neutral-400 text-black" onClick={() => setIsModalOpen(true)}>
+        <Button className="ml-2 bg-neutral-400 text-black cursor-pointer" onClick={() => setIsModalOpen(true)}>
           Create Todo
+        </Button>
+
+        <Button className="ml-2 bg-red-400 text-white cursor-pointer" onClick={() => {
+          localStorage.removeItem("authorization");
+          navigate("/signin");
+        }}>
+          Logout
         </Button>
       </div>
 
