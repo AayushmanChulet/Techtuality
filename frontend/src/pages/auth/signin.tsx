@@ -33,7 +33,7 @@ export default function SigninPage() {
   useEffect(() => {
     const token = localStorage.getItem("authorization");
     if (token) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [navigate]);
 

@@ -45,7 +45,7 @@ export default function SignupPage() {
   useEffect(() => {
       const token = localStorage.getItem("authorization");
       if (token) {
-        navigate("/dashboard");
+        navigate("/");
       }
     }, [navigate]);
 
