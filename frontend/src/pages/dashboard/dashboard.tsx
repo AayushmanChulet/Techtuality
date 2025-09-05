@@ -51,15 +51,16 @@ export default function DashboardPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const fetchTodos = async () => {
+
     const token = localStorage.getItem("authorization");
+    
     if (!token) {
       navigate("/signin");
     }
-    setToken(token);
-  }, [navigate]);
 
-  useEffect(() => {
-    const fetchTodos = async () => {
+    setToken(token);
+
       setLoading(true);
       setError(null);
       try {
@@ -71,11 +72,6 @@ export default function DashboardPage() {
             },
           }
         );
-
-        if(response.status === 401){
-          localStorage.removeItem("authorization");
-          navigate("/signin");
-        }
 
         if (response.status !== 200) {
           throw new Error("Failed to fetch todos");
